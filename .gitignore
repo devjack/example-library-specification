@@ -1,6 +1,4 @@
 node_modules/
 dist/
-public/openapi.yml
-public/schemas
-
+public
 
