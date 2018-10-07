@@ -6,7 +6,7 @@
     "test": "node_modules/.bin/speccy lint openapi.yml -j",
     "resolve": "mkdir -p dist && node_modules/.bin/speccy resolve openapi.yml -j > dist/openapi.yml",
     "serve": "node_modules/.bin/speccy serve openapi.yml -j",
-    "publish": "cp dist/openapi.yml public/openapi.yml && cp -R schemas public/"
+    "publish": "mkdir public && cp static/* public/ && cp dist/openapi.yml public/openapi.yml && cp -R schemas public/"
   },
   "repository": {
     "type": "git",

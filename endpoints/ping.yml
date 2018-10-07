@@ -1,6 +1,7 @@
 paths:
     '/ping':
         get:
+          summary: Healthcheck endpoint
           operationId: ping
           description: "Check to see that the application is ready to respond to requests."
           tags:
