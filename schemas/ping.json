@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "Ping/Pong resource for simple healthchecks.",
+    "required": [
+        "ping"
+    ],
+    "properties": {
+        "ping": {
+            "type": "string",
+            "description": "An acknowledgement tat the ping was received",
+            "default": "",
+            "example": "pong"
+        }
+    }
+}

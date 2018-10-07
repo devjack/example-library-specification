@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+    title: The Library
+    description: A simple library API
+    contact:
+      name: developerjack
+      url: https://www.twitter.com/developerjack
+    license:
+      name: Proprietary
+    version: 0.0.1 #Spec version/revision - not the API or product version
+
+servers:
+  - url: 'http://localhost:8080'
+    description: Local dev API.
+
+tags:
+  - name: User
+  #- name: Book
+  #- name: Loan
+
+paths:
+    /ping:
+       $ref: "endpoints/ping.yml#/paths/~1ping"
+    
+    # /user:
+    #    $ref: "endpoints/user.yml#/paths/~1user"
+    # todo: The user endpoints
+    # /user/{id}:
+    #    $ref: "endpoints/user.yml#/paths/~1user~1{id}"
+    
+    # todo: The book endpoints
+    # /book:
+    #    $ref: "endpoints/book.yml#/paths/~1book"
+    # /book/{id}:
+    #    $ref: "endpoints/book.yml#/paths/~1book~1{id}"
+    
+    # todo: The loan endpoints
+    # /loan:
+    #    $ref: "endpoints/loan.yml#/paths/~1loan"
+    # /loan/{id}:
+    #     $ref: "endpoints/loan.yml#/paths/~1loan~1{id}"
+
+components:
+    schemas:
+        ping:
+            $ref: 'schemas/ping.json'
+            
+        # todo: user resources
+        # user:
+        #     $ref: 'schemas/user.json'
+        # user-collection:
+        #     $ref: 'schemas/user-collection.json'
+        
+        # todo: book resources
+        # book:
+        #     $ref: 'schemas/book.json'
+        # book-collection:
+        #     $ref: 'schemas/book-collection.json'
+        
+        # todo: loan resources
+        # loan:
+        #     $ref: 'schemas/loan.json'
+        # loan-collection:
+        #     $ref: 'schemas/loan-collection.json'
+
+        error:
+            type: object
+            required:
+            - id
+            - message
+            properties:
+                id:
+                    type: string
+                    description: "Unique ID of this error. For example sake, use the HTTP status code."
+                    nullable: false
+                    example: "500"
+                message:
+                    type: string
+                    description: "A human readable message describing the nature of the error."
+                    nullable: false
+                path:
+                    type: string
+                    description: "A JSONpath reference to the field where the error occurred."
+                    nullable: true

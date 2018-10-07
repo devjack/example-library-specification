@@ -1,0 +1,20 @@
+paths:
+    '/ping':
+        get:
+          operationId: ping
+          description: "Check to see that the application is ready to respond to requests."
+          tags:
+            - Ping
+          responses:
+            '200':
+              description: Successful ping; the application is ready to respond to requests
+              content:
+                application/json:
+                    schema:
+                        $ref: '../openapi.yml#/components/schemas/ping'
+            '500':
+              description: Unsuccessful ping; the application is NOT ready.
+              content:
+                application/json:
+                    schema:
+                        $ref: '../openapi.yml#/components/schemas/error'

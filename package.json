@@ -1,0 +1,28 @@
+{
+  "name": "example-library-specification",
+  "version": "0.0.1",
+  "description": "An example library API definition",
+  "scripts": {
+    "test": "node_modules/.bin/speccy lint openapi.yml -j",
+    "resolve": "mkdir -p dist && node_modules/.bin/speccy resolve openapi.yml -j > dist/openapi.yml",
+    "serve": "node_modules/.bin/speccy serve openapi.yml -j",
+    "publish": "cp dist/openapi.yml public/openapi.yml && cp -R schemas public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:devjack/example-library-specification.git"
+  },
+  "author": "Jack Skinner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devjack/example-library-specification/issues"
+  },
+  "homepage": "https://github.com/devjack/example-library-specification",
+  "devDependencies": {
+    "speccy": "^0.7"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=5.6"
+  }
+}
